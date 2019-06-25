@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+{#"基础模板 提供主要的设计、外观风格"#}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %} {% endblock %}</title>
+</head>
+<body>
+    {% include 'header.html' %}
+    {% block headmessage %} {% endblock %}
+    <hr>
+    {% block content %} {% endblock %}
+    <hr>
+    {% include 'footer.html' %}
+
+</body>
+</html>

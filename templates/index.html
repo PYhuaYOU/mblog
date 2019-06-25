@@ -1,0 +1,21 @@
+{#"网站的首页 "#}
+{% extends "base.html" %}
+
+{% block title %}欢迎光临 我的博客{% endblock %}
+
+
+{% block headmessage %}
+    <h1>文章列表</h1>
+{% endblock %}
+
+
+{% block content %}
+    {% for post in posts %}
+<div>
+{#    <h2>{{ post.title }}</h2>#}
+{#    <span>{{ post.body }}</span>#}
+<a href="post/{{ post.slug }}">{{ post.title }}</a>
+</div>
+    {% endfor %}
+{% endblock %}
+
