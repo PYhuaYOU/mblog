@@ -6,4 +6,4 @@
  {% block headmessage %} <a href="/index">返回首页</a>{% endblock %}
 
 
-{% block content %} {{ post.body }}{% endblock %}
+{% block content %} {{ post.body | safe }}{% endblock %}
