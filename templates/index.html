@@ -22,14 +22,18 @@
             <div class="panel-footer">
                 <p>
                     发布时间：{{ post.pub_date | date:"Y M d, h:m:s" }}
+                    <span class="glyphicon glyphicon-trash" onclick="go_delete({{ post.slug }})"></span>
                 </p>
             </div>
         </div>
-{#<div>#}
-{#    <h2>{{ post.title }}</h2>#}
-{#    <span>{{ post.body }}</span>#}
-{#<a href="post/{{ post.slug }}">{{ post.title }}</a>#}
-{#</div>#}
+        {{ message }}
+        <script>
+            function go_delete(id) {
+                var usr = '/'+id + '/';
+                window.location = usr;
+                console.log(window.location)
+            }
+        </script>
     {% endfor %}
 {% endblock %}
 

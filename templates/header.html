@@ -1,8 +1,28 @@
 {#"共享标题元素 通常网络log"#}
-{% load static %}
-<div class="well">
+{#{% load static %}#}
+{#<div class="well">#}
 
 
-    <h1><img style="height: 50px" src="{% static "images/logo.jpg" %}"/>欢迎光临 文学天地</h1>
+{#    <h1><img style="height: 50px" src="{% static "images/logo.jpg" %}"/>欢迎光临 文学天地</h1>#}
 
-</div>
+{#</div>#}
+
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <div class="navbar-brand" align="center">分享日记</div>
+        </div>
+        <ul class="nav navbar-nav">
+            {% if username %}
+            <li><a> 个人资料</a></li>
+            <li><a> 个人资料</a></li>
+            <li><a> 个人资料</a></li>
+            <li><a href="/logout"> 注销</a></li>
+            {% else %}
+            <li><a href="/login"> 登录</a></li>
+            {% endif %}
+            <li><a href="/admin"> 后台管理</a></li>
+        </ul>
+    </div>
+
+</nav>

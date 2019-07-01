@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+
+
+{% block title %}
+   我有话要说
+{% endblock %}
+
+{% if message %}
+    {% block headmessage %}
+        <div class="alert-warning alert">
+            {{ message }}
+        </div>
+
+    {% endblock %}
+{% endif %}
+
+ {% block content %}
+
+     <form method="POST" name="my form" action="/post2db/">
+        {% csrf_token %}
+         <table>
+        {{ form.as_table }}
+         </table>
+        <input type="submit" value="张贴"/>
+        <input type="reset" value="清除重写"/>
+     </form>
+ {% endblock %}

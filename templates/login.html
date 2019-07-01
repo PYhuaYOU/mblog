@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+
+{% block headmessage %}
+    <h3>登录</h3>
+{% endblock %}
+
+
+{% block content %}
+    {{ message }}
+    <form method="POST" action="/login/" name="my form">
+    {% csrf_token %}
+{#        <label for="user_id">用户名</label>#}
+{#        <input id="user_id" type="text" name="user_id"/>#}
+{#        <label for="user_pass">密码</label>#}
+{#        <input id="user_pass" type="password" name="user_pass">#}
+        <table>
+            {{ login_form.as_table }}
+        </table>
+        <input type="submit" value="登录">
+        <input type="reset" value="清除重填">
+
+    </form>
+{% endblock %}
