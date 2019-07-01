@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %} 联络管理员 {% endblock %}
+
+
+     {% block headmessage %}写信给管理员{% endblock %}
+{% block content %}
+    {% if message %}
+        <div class="alert alert-warning">{{ message }}{{ user_name }}</div>
+    {% endif %}
+    <form method="post" name="my form" action="/contact/" >
+        {% csrf_token %}
+
+         <div class="panel-body">
+            {{ form.as_p }}
+
+         </div>
+         <input type="submit" value="提交"/>
+     </form>
+ {% endblock %}
